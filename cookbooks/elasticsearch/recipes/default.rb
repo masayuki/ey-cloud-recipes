@@ -155,6 +155,8 @@ if ['util'].include?(node[:instance_role])
     mode 0644
   end
 
+  es_plugin "kuromoji" do action :install end
+
   # Tell monit to just reload, if elasticsearch is not running start it.  If it is monit will do nothing.
   execute "monit reload" do
     command "monit reload"
@@ -183,5 +185,3 @@ if ['solo','app_master','app','util'].include?(node[:instance_role])
     end
   end
 end
-
-es_plugin "kuromoji" do action :install end
