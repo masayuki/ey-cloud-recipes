@@ -183,3 +183,5 @@ if ['solo','app_master','app','util'].include?(node[:instance_role])
     end
   end
 end
+
+es_plugin "kuromoji" do action :install end
